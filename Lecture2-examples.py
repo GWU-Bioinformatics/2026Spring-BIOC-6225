@@ -112,9 +112,12 @@ print(f"The type here should be an integer: {type(42)}")
 
 # Opening and reading a file
 # Use the "with" context manager keyword
-with open('example_1.csv', 'r') as file_pointer:
+with open('example.vcf', 'r') as file_pointer:
     # A list of every line in the example, split on '\n' by default
     data = file_pointer.readlines()
+    print("*"*80)
+    print(data)
+    print("*"*80)
 # Writing a file out
 with open('output.csv', 'w') as output_pointer:
     for line in data:
@@ -158,7 +161,6 @@ print(f"GLOBAL Value: {value}")
 
 # The 'global' keyword can be used to persist variables, 
 # but can cause problems as a codebase grows
-
 global_value = 1
 def add_global():
     global global_value
@@ -203,3 +205,21 @@ print(f"Object addition, revised state: {adder.add_numbers()}")
 # There is also a standard package manager for 
 # handling external dependecies, called `pip`
 
+# The standard library package for interacting with the
+# operating system is os
+import os
+# For example, allow all users to run a script in their home
+# directories by asking the OS what a user shortcut is
+# In Linux/Mac, this is "~" or "$HOME". On Windows, it is %USERPROFILE%.
+my_home_dir = os.path.expanduser("~/")
+print(f"My home directory is: {my_home_dir}")
+
+# AI packages rely on common math packages
+import scipy
+# Imports can be aliased
+import numpy as np
+import pandas as pd
+# This is true of AI/ML packages as well
+import sklearn
+# We can also import only the components we are interested in
+from sklearn.tree import DecisionTreeClassifier
