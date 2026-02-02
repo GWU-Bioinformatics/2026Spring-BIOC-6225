@@ -3,12 +3,13 @@ integer = 123
 floating_point = 3.1415
 complex_number = 0+1j
 string = "Hello, World!"
-# String can also use single-quotes
-string = "An altered string"
 boolean = True  # or False
 none = None
+
 # Tuples are like an immutable (unchangeable) list
 tup = ('A', 'B', 3)
+# String can also use single-quotes
+string = "An altered string"
 
 # Lists
 example_list = list()
@@ -25,10 +26,6 @@ example_dictionary = {}  # Same thing
 example_dictionary['pet'] = 'cat'
 example_dictionary['count'] = 12345
 
-# Beware that variables are not protected
-very_valuable_dictionary = {'contents': 'something super important that took 24 hours to complete'}
-very_valuable_dictionary = '...Ooops :/'
-
 # Sets
 set1 = set()
 # Sets are unordered, and maintain unique values only
@@ -37,16 +34,25 @@ print(f"Set 1: {set1}")
 set1.update([2,3,4,5])
 print(f"Set 1: {set1}")
 
+# Beware that variables are not protected
+very_valuable_dictionary = {'contents': 
+    'something super important that took 24 hours to complete'
+    }
+very_valuable_dictionary = '...Ooops :/'
+
 
 #### Control flow
 # Boolean control flow
 condition = True
 if condition:
     # Proceed this way
-    ...  # Elipsis is a special built-in called a no-op (no operation)
+    ...  
+    # (Ellipsis is a special built-in 
+    # called a no-op (no operation))
 else:
     # Proceed this way
     ...
+
 # Numeric control flow
 condition = 1
 if condition < 1:
@@ -60,13 +66,25 @@ if condition >= 1:
     ...
 else:
     ...
+
+# match-case (Python >= 3.10): Similar to case/switch 
+# statements in other languages
+def match_case(condition):
+    match condition:
+        case 1:
+            return "Only performs matching, " \
+                "no other comparison operators"
+        case _:
+            return "This is the default for all " \
+                "non-matching cases. " \
+                "'_' indicates 'All other values'"
+
 # Control flow can include catching errors in computations
 assertion = False
 try:
     assert(assertion), "This should never pass an assertion"
 except Exception as e:
     print(f"Caught error: {e}")
-
 
 # Basic system calls
 #### Printing ####
@@ -82,7 +100,8 @@ except Exception as e:
     print(f"{e}: Caused an exception")
     pass
 
-# Special characters: \t - "tab", \n - "newline" (on Windows, this is \r\n ("carriage return+newline"))
+# Special characters: \t - "tab", \n - "newline" 
+# (on Windows, this is \r\n ("carriage return+newline"))
 print(f"Tab:[\t] Newline: [\n]")
 
 # Assertions
