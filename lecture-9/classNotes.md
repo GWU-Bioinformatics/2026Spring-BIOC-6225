@@ -17,4 +17,7 @@ Once you've downloaded llama3, please be sure to run the following steps to be r
 2. `ollama pull embeddinggemma`
 3. `ollama serve`
 
+If you do not have sklearn installed, please also install that:
+`pip install scikit-learn`
+
 Each of the scripts can be run with `python3 <scriptname.py>`
